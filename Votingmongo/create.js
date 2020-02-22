@@ -34,5 +34,5 @@ file.on('close', function() {
     .then(() => Promise.all(result.map(x => x.save())))
     .then(() => mongoose.connection.close())
     .then(()=> console.log("Ready"))
-    .catch(error => console.error(error.stack));
+    .catch(error => console.log(error.stack));
 })
