@@ -25,3 +25,11 @@ file.on('line', function(line) {
     history: columns[3]})
   )
 });
+
+file.on('close', function(result) {
+  mongoose.connection.dropDatabase()
+    .then(result => result.save())
+    .then(() => mongoose.connection.close())
+    .then(result => console.log("Ready"))
+    .catch(error => console.error(error.stack));
+});
