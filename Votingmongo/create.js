@@ -29,7 +29,7 @@ file.on('line', function(line) {
 
 file.on('close', function() {
   mongoose.connection.dropDatabase()
-    .then(() => result.insert())
+    .then(() => result.collection.save())
     .then(() => mongoose.connection.close())
     .then(()=> console.log("Ready"))
     .catch(error => console.error(error.stack));
