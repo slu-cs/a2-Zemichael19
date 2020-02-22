@@ -17,19 +17,19 @@ connect(); // To the database
 const result = [];
 file.on('line', function(line) {
   const columns = line.split(',');
-  result =
+  result.push(
     new Voters ({
     first: columns[0],
     last: columns[1],
     zipcode: Number(columns[2]),
     history: columns[3]
     })
-
+  )
 });
 
 file.on('close', function() {
   mongoose.connection.dropDatabase()
-    .then(() => result.save())
+    .then(() result => save())
     .then(() => mongoose.connection.close())
     .then(()=> console.log("Ready"))
     .catch(error => console.error(error.stack));
