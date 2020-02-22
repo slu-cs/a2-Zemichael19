@@ -27,10 +27,18 @@ file.on('line', function(line) {
   )
 });
 
-file.on('close', function() {
-  mongoose.connection.dropDatabase()
-    .then(() => result.save())
-    .then(() => mongoose.connection.close())
-    .then(()=> console.log("Ready"))
-    .catch(error => console.error(error.stack));
+  mongoose.connection.dropDatabase(function() {
+    harcourt.save(function(error) {
+      if (error) console.error(error.stack);
+        mongoose.connection.close(function() {
+          console.log('Database is ready.');
+        });
+    });
 });
+
+
+/* mongoose.connection.dropDatabase()
+  .then(() => result.save())
+  .then(() => mongoose.connection.close())
+  .then(()=> console.log("Ready"))
+  .catch(error => console.error(error.stack)); */
