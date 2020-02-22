@@ -27,18 +27,14 @@ file.on('line', function(line) {
   )
 });
 
-// Reset the data. this is the same thing as the commented code
 mongoose.connection.dropDatabase(function() {
   result.save(function(error){
-    if (error) console.error(error.stack);
-    mongoose.connection.close(function() {
-      console.log('Database is ready.');
-    });
-  })
-})
-
-
-
+    if (error) console.log(error.stack);
+      mongoose.connection.close(function() {
+        console.log('Database is ready.');
+      });
+    })
+});
 /* file.on('close', function() {
   mongoose.connection.dropDatabase()
     .then(() => result.save())
