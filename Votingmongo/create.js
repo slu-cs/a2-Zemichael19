@@ -27,18 +27,17 @@ file.on('line', function(line) {
   )
 });
 
-  mongoose.connection.dropDatabase(function() {
-    results.save(function(error) {
-      if (error) console.error(error.stack);
-        mongoose.connection.close(function() {
-          console.log('Database is ready.');
-        });
-    });
-});
-
-
-/* mongoose.connection.dropDatabase()
+// Reset the data. this is the same thing as the commented code
+mongoose.connection.dropDatabase()
   .then(() => result.save())
-  .then(() => mongoose.connection.close())
-  .then(()=> console.log("Ready"))
-  .catch(error => console.error(error.stack)); */
+  .then(() => console.log('Database is ready.'))
+  .catch(error => console.error(error.stack));
+
+
+/* file.on('close', function() {
+  mongoose.connection.dropDatabase()
+    .then(() => result.save())
+    .then(() => mongoose.connection.close())
+    .then(()=> console.log("Ready"))
+    .catch(error => console.error(error.stack));
+}) */
