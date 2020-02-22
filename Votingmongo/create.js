@@ -27,18 +27,10 @@ file.on('line', function(line) {
   )
 });
 
-mongoose.connection.dropDatabase(function() {
-  result.save(function(error){
-    if (error) console.log(error.stack);
-      mongoose.connection.close(function() {
-        console.log('Database is ready.');
-      });
-    })
-});
-/* file.on('close', function() {
+file.on('close', function() {
   mongoose.connection.dropDatabase()
-    .then(() => result.save())
+    .then(() => result.create())
     .then(() => mongoose.connection.close())
     .then(()=> console.log("Ready"))
     .catch(error => console.error(error.stack));
-}) */
+})
