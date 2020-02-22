@@ -24,7 +24,7 @@ file.on('line', function(line) {
     zipcode: Number(columns[2]),
     history: columns[3]})
   )
-})
+});
 
 file.on('close', function(result) {
   mongoose.connection.dropDatabase()
@@ -32,4 +32,4 @@ file.on('close', function(result) {
     .then(() => mongoose.connection.close())
     .then(result => console.log("Ready"))
     .catch(error => console.error(error.stack));
-})
+});
