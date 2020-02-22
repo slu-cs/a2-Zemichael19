@@ -28,7 +28,7 @@ file.on('line', function(line) {
 });
 
   mongoose.connection.dropDatabase(function() {
-    result.save(function(error) {
+    results.save(function(error) {
       if (error) console.error(error.stack);
         mongoose.connection.close(function() {
           console.log('Database is ready.');
