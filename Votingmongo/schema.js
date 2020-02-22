@@ -9,7 +9,7 @@ const Voters = new mongoose.Schema({
   zipcode: Number,
   history: String
 
-});
+})
 // speed up queries on all fields
 Voters.index({first:1});
 Voters.index({last:1});
