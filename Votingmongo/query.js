@@ -1,4 +1,4 @@
-// Query the faculty database
+
 
 const mongoose = require('mongoose');
 const connect = require('./db');
@@ -17,7 +17,7 @@ const queries = [
 
   Voters.find().where('started').equals(2003),
 
-  
+
   Voters.find().where('courses').in(362),
 
   Voters.distinct('rank')
