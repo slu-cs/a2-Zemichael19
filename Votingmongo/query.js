@@ -29,5 +29,5 @@ const queries = [
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(result) {
-    console.log('How many registered voters live in the Canton zipcode? ', result[0].map(p => p.first));
+    console.log('How many registered voters live in the Canton zipcode? ', result[0]);
 }).catch(error => console.error(error.stack));
