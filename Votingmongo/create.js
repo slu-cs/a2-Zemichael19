@@ -32,4 +32,4 @@ file.on('close', function(result) {
     .then(() => mongoose.connection.close())
     .then(result => console.log("Ready"))
     .catch(error => console.error(error.stack));
-});
+})
