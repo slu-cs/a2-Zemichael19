@@ -7,20 +7,7 @@ const Voters = require('./schema');
 connect(); // To the database
 
 const queries = [
-  Voters.find();
-
-  Voters.find().sort('name'),
-
-
-  Voters.find().sort('-started').limit(1),
-
-
-  Voters.find().where('started').equals(2003),
-
-
-  Voters.find().where('courses').in(362),
-
-  Voters.distinct('rank')
+  Voters.find()
 ];
 
 
