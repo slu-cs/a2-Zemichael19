@@ -8,7 +8,7 @@ connect(); // To the database
 
 const queries = [
 
-  Voters.find().where('zipcode'),
+  Voters.find().where('zipcode').count(),
   Voters.find().where('first').equals('STARR'),
 
 
