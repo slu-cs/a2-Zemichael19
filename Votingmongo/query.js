@@ -7,8 +7,8 @@ const Voters = require('./schema');
 connect(); // To the database
 
 const queries = [
-  // What are names in alphabetical order?
-  Voters.find().where('zipcode').equals('13617').countDocuments(),
+
+  Voters.find().where('zipcode').countDocuments(),
   Voters.find().where('first').equals('STARR'),
 
 
