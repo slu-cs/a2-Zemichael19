@@ -8,7 +8,7 @@ connect(); // To the database
 
 const queries = [
 
-  Voters.find().where('zipcode').equals(13617).count(),
+  Voters.find().where('zipcode').equals('13617').count(),
   Voters.find().where('first').equals('STARR'),
   Voters.find().where('history').in('GE16').count(),
   Voters.find().sort('-last').limit(1),
