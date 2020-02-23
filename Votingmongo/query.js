@@ -12,7 +12,7 @@ const queries = [
   Voters.find().where('first').equals('STARR'),
   Voters.find().where('history').in('GE16').count(),
   Voters.find().sort('-last').limit(1),
-  Voters.distinct('zipcode').countDocuments()
+  Voters.find().distinct('zipcode').countDocuments()
 
 ];
 
