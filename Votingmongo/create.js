@@ -21,8 +21,8 @@ file.on('line', function(line) {
     new Voters ({
     first: columns[0],
     last: columns[1],
-    zipcode: columns[2],
-    history: columns.slice(3)
+    zipcode: Number(columns[2]),
+    history: columns[3]
     })
   )
 });
