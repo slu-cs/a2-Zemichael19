@@ -31,6 +31,6 @@ file.on('close', function(line) {
   mongoose.connection.dropDatabase()
     .then(() => Promise.all(result.map(x => x.save())))
     .then(() => mongoose.connection.close())
-    .then(()=> console.log("Ready"))
+    .then(()=> console.log("File is ready"))
     .catch(error => console.error(error.stack));
 })

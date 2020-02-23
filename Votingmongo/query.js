@@ -10,7 +10,7 @@ const queries = [
 
   Voters.find().where('zipcode').equals(13617).count(),
   Voters.find().where('first').equals('STARR'),
-  Voters.find({'Voter_history':{$regex:/GE16/}}),
+  Voters.find({'history':{$regex:/GE16/}}),
   Voters.find().sort('-last').limit(1),
   Voters.distinct('zipcode')
 
