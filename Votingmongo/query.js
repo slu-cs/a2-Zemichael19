@@ -24,5 +24,5 @@ Promise.all(queries)
     console.log('What are the full names of all registered voters whose first name is STARR?', result[1].map(x => x.first +"-" +x.last));
     console.log('How many people voted in the 2016 general election (GE16)', result[2])
     console.log('What is the last-name that comes last in the county in alphabetical order?', result[3].map(x => x.last))
-    console.log('How many zip codes does the county contain?', result[3])
+    console.log('How many zip codes does the county contain?', result[4])
 }).catch(error => console.error(error.stack));
