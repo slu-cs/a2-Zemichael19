@@ -21,8 +21,8 @@ const queries = [
 Promise.all(queries)
   .then(function(result) {
     console.log('How many registered voters live in the Canton zipcode? ', result[0]);
-    console.log('What are the full names of all registered voters whose first name is STARR?', result[1].map(x => x.first +"-" +x.last));
-    console.log('How many people voted in the 2016 general election (GE16)', result[2])
-    console.log('What is the last-name that comes last in the county in alphabetical order?', result[3].map(x => x.last))
+    console.log('What are the full names of all registered voters whose first name is STARR?', result[1].map(d => d.first +"-" +d.last));
+    console.log('How many people voted in the 2016 general election (GE16)?', result[2])
+    console.log('What is the last-name that comes last in the county in alphabetical order?', result[3].map(d => d.last))
     console.log('How many zip codes does the county contain?', result[4])
 }).catch(error => console.error(error.stack));
