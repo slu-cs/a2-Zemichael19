@@ -8,7 +8,7 @@ connect(); // To the database
 
 const queries = [
 
-  Voters.find().where('zipcode').equals(13617).count(),
+  Voters.find().where('zipcode').equals('13617').count(),
   Voters.find().where('first').equals('STARR'),
 
 
@@ -16,7 +16,7 @@ const queries = [
 
 // Run the queries in parallel
 Promise.all(queries)
-  .then(function(result) {
-    console.log('How many registered voters live in the Canton zipcode? ', result[0]);
+  .then(function(results) {
+    console.log('How many registered voters live in the Canton zipcode? ', results[0]);
     console.log('What are the full names of all registered voters whose full name is STARR?', result[1].map(x => x.first +"-" +x.last));
 }).catch(error => console.error(error.stack));
