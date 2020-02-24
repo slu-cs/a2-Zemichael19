@@ -29,7 +29,7 @@ file.on('line', function(line) {
 
 file.on('close', function(line) {
   mongoose.connection.dropDatabase()
-    .then(() => Promise.all(result.map(x => x.save())))
+    .then(() => Promise.all(result.map(i => i.save())))
     .then(() => mongoose.connection.close())
     .then(()=> console.log("File is ready"))
     .catch(error => console.error(error.stack));
