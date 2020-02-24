@@ -27,7 +27,7 @@ file.on('line', function(line) {
   )
 });
 
-file.on('close', function(line) {
+file.on('close', function() {
   mongoose.connection.dropDatabase()
     .then(() => Promise.all(result.map(i => i.save())))
     .then(() => mongoose.connection.close())
